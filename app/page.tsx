@@ -1,13 +1,17 @@
 import HomePage from "@/components/Home/HomePage";
+import Navbar from "@/components/Home/Navbar";
 
 export default function Home() {
-  return (
-    // <div className="flex display-auto">
-      // <HomePage/>
-    <div className="h-screen grid grid-cols-[260px_1fr_300px] bg-[#f6f7f5]">
-      
+  return (   
+   <div className="h-screen grid grid-cols-[260px_1fr_300px] bg-[#f6f7f5]">
+       {/* Navigation bar */}
+       <Navbar/>
+       <main className="col-span-full">       
+          <HomePage/>
+       </main>
+
       {/* LEFT SIDEBAR */}
-      <aside className="bg-white border-r p-4 overflow-y-auto">
+      {/* <aside className="bg-white border-r p-4 overflow-y-auto">
         <h2 className="text-lg font-semibold mb-4 text-black">Search By Category</h2>
 
         <input
@@ -28,7 +32,7 @@ export default function Home() {
       </aside>
 
       {/* CENTER CONTENT */}
-      <main className="p-8 overflow-y-auto">
+      {/* <main className="p-8 overflow-y-auto">
         <h1 className="text-2xl font-semibold text-green-800 mb-4">
           120.3 Qul for Protection
         </h1>
@@ -58,10 +62,10 @@ export default function Home() {
         <h2 className="text-xl font-semibold">
           Sura Falaq three times:
         </h2>
-      </main>
+      </main> */}
 
       {/* RIGHT SETTINGS PANEL */}
-      <aside className="bg-white border-l p-6 overflow-y-auto">
+      {/* <aside className="bg-white border-l p-6 overflow-y-auto">
         <h2 className="font-semibold text-lg mb-6">Settings</h2>
 
         <div className="space-y-6">
@@ -85,7 +89,7 @@ export default function Home() {
             </div></div>
           </div>
         </div>
-      </aside>
+      </aside> */} 
 
 
     </div>
