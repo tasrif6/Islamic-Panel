@@ -3,6 +3,7 @@ import { NavLinks } from '@/constant/NavLink'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '../ui/button'
+import { Input } from '../ui/input';
 
 const Navbar = () => {
   return (
@@ -28,12 +29,12 @@ const Navbar = () => {
       {/* right: future content placeholder */}
       <div className="flex items-center space-x-4">
         {/* put right-side items here */}
-        <Button className="px-6 py-2 text-sm md:text-md text-white font-bold bg-emerald-600 border border-rounded hover:text-black "><Link href="/login">LogIn</Link></Button>
+        <Button className="px-6 py-2 text-sm md:text-md text-white font-bold bg-emerald-600 cursor-pointer border-rounded hover:text-black hover:bg-emerald-600"><Link href="/login">LogIn</Link></Button>
       
-        <input
+        <Input
           type="text"
           placeholder="Search..."
-          className="w-full p-2 border rounded-md mb-6 bg-emerald-400 "
+          className="w-full border-rounded border-emerald-700 bg-white "
         />
         </div>
     </div>
