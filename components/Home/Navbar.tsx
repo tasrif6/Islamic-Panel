@@ -12,10 +12,12 @@ const Navbar = () => {
       <Image src="/logo.jpg" alt="logo" height={40} width={40} />
 
       <div className="relative">
+        <Link href="/">
         <h6 className="ml-3 text-black dark:text-white text-md font-bold">
         Dua <span className="text-emerald-600">&</span> Ruqyah
         </h6>
         <p className="text-gray-600 dark:text-gray-300 ml-3">Hisnul Muslim</p>
+        </Link>
       </div>
 
       {/* center: nav links */}
