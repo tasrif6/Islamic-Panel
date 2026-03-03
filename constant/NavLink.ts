@@ -1,4 +1,4 @@
-import { BookmarkMinus, ClipboardPlus, DiamondPercent, House, LayoutGrid,  } from "lucide-react";
+import { BadgeInfo, Menu, BookmarkMinus, BookOpenText, ClipboardPlus, Copyright, DiamondPercent, House, Info, LayoutGrid, MessageCircleMore, MessageSquareQuote, Moon, Projector, ShieldAlert, Sunset,  } from "lucide-react";
 
 export const NavLinks = [
     {
@@ -58,6 +58,70 @@ export const SideNavLinks =[
         url: "/ruqyah",
         icon: ClipboardPlus,
         name:"Ruqyah",
-    }
+    },
+    // {
+    //     id: 6,
+    //     url: "/menu",
+    //     icon: Menu,
+    //     name: "Menu",
+    // },
+]
+
+export const MenuLinks = [
+    {
+        id:1,
+        icon: Sunset,
+        name: "Prayer Name",
+    },
+    {
+        id:2,
+        icon: LayoutGrid,
+        name:"Duas",
+    },
+    {
+        id: 3,
+        icon: BookOpenText,
+        name: "Books",
+    },
+    {
+        id: 4,
+        icon: Moon,
+        name: "Ramadan 2026",
+    },
+    {
+        id: 5,
+        icon: Info,
+        name: "Dua Info",
+    },
+    {
+        id: 6,
+        icon: BadgeInfo,
+        name: "About Us",
+    },
+    {
+        id: 7,
+        icon:LayoutGrid,
+        name:"Prayer",
+    },{
+        id:8,
+        icon: Copyright,
+        name:"Copyright",
+    },{
+        id:9,
+        icon: MessageCircleMore,
+        name:"Contact Us",
+    },{
+        id:10,
+        icon: MessageSquareQuote,
+        name:"Thanks & Credits",
+    },{
+        id:11,
+        icon: ShieldAlert,
+        name:"Privacy Policy",
+    },{
+        id:12,
+        icon: Projector,
+        name:"Our Projects",
+    },
 ]
 
