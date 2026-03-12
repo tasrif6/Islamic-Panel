@@ -33,8 +33,12 @@ export function RightPanel() {
 
   // Font section
   const [showArabicFont, setShowArabicFont] = useState(false);
+  const [showFontPanel, setShowFontPanel] = useState(false)
   const [arabValue, setArabValue] = useState([30]);
   const [transValue, setTransValue] = useState([20]);
+  const Uthmani = ["KFGQ", "Me Quran", "Al Mushaf", "PDMS Saleem Quran", "PDMS Islamic", "Al Qalam Quran Majeed", "Amiri Quran"]
+  const Indopak = ["Noor E Huda", "Noor E Hedayat", "Noor E Hira"]
+  const [selectedFont, setSelectedFont] = useState("KFGQ")
 
   // Appearance
   const [showAppearance, setShowAppearance] = useState(true);
@@ -43,10 +47,6 @@ export function RightPanel() {
     <div className="relative overflow-hidden h-full">
 
       {/* ================= MAIN PANEL ================= */}
-      <div
-        className={`absolute w-full transition-transform duration-300
-        ${showLangPanel ? "-translate-x-full" : "translate-x-0"}`}
-      >
         <div className="flex flex-col space-y-2">
 
           {/* LANGUAGE SETTINGS */}
@@ -55,9 +55,9 @@ export function RightPanel() {
               className="flex items-center justify-between gap-4 px-6 py-2 w-full hover:bg-black"
               onClick={() => setShowLang(!showlang)}
             >
-              <div className="flex gap-4 items-center">
-                <Globe className="text-emerald-800" />
-                Language Settings
+              <div className="flex gap-4 items-center cursor-pointer">
+                <Globe className={`${showlang ? "text-emerald-900": "text-emerald-700"}`} />
+                <span className={`${showlang ? "text-emerald-600" : ""}`}>Language Settings</span>
               </div>
 
               <ChevronDown
@@ -69,12 +69,12 @@ export function RightPanel() {
 
             {showlang && (
               <div className="py-4 px-6">
-
+                <span className="items-center justify-left">Selected Language</span>
                 <button
-                  className="flex items-center justify-between w-full opacity-60"
+                  className="flex mt-6 items-center justify-between w-full opacity-60 cursor-pointer"
                   onClick={() => setShowLangPanel(true)}
                 >
-                  Selected Language
+                  English
                   <ChevronRight />
                 </button>
 
@@ -85,11 +85,11 @@ export function RightPanel() {
           {/* FONT SETTINGS */}
           <div className="w-full">
             <button
-              className="flex items-center justify-between gap-4 px-6 py-2 w-full hover:bg-black"
+              className="flex items-center justify-between gap-4 cursor-pointer px-6 py-2 w-full hover:bg-black"
               onClick={() => setShowArabicFont(!showArabicFont)}
             >
-              <Type className="text-emerald-800" />
-              Font Setting
+              <Type className={`${showArabicFont ? "text-emerald-900": "text-emerald-700"}`} />
+              <span className={`${showArabicFont ? "text-emerald-600" : ""}`}>Font Setting</span>
 
               <ChevronDown
                 className={`transition-transform duration-300 ${
@@ -101,7 +101,8 @@ export function RightPanel() {
             {showArabicFont && (
               <div className="px-6 py-4 space-y-6">
 
-                <div>Arabic Font Face</div>
+                <div><span>Arabic Font Face</span>
+                <button className="flex mt-6 w-full items-center justify-between opacity-60" onClick={() => setShowFontPanel(!showFontPanel)}>KFGQ <ChevronRight/></button></div>
 
                 <div className="space-y-4">
                   <Label>
@@ -115,7 +116,7 @@ export function RightPanel() {
                     value={arabValue}
                     onValueChange={setArabValue}
                     min={0}
-                    max={100}
+                    max={56}
                     step={1}
                   />
                 </div>
@@ -132,7 +133,7 @@ export function RightPanel() {
                     value={transValue}
                     onValueChange={setTransValue}
                     min={0}
-                    max={100}
+                    max={44}
                     step={1}
                   />
                 </div>
@@ -140,6 +141,8 @@ export function RightPanel() {
               </div>
             )}
           </div>
+
+          
 
           {/* VIEW SETTINGS */}
           <div className="w-full">
@@ -222,7 +225,7 @@ export function RightPanel() {
           </div>
 
         </div>
-      </div>
+      
 
       {/* ================= LANGUAGE PANEL ================= */}
       <div
@@ -233,11 +236,11 @@ export function RightPanel() {
         {/* HEADER */}
         <div className="flex items-center gap-4 px-6 py-4 border-b border-gray-700">
 
-          <button onClick={() => setShowLangPanel(false)}>
+          <button className="flex space-x-4 cursor-pointer" onClick={() => setShowLangPanel(false)}>
             <ChevronLeft />
-          </button>
+          
 
-          <span className="font-semibold">Select Language</span>
+          <span className="font-semibold">Select Language</span></button>
 
         </div>
 
@@ -251,7 +254,7 @@ export function RightPanel() {
             >
               
               <span
-                className={`w-3 h-3 rounded-full border ${
+                className={`w-4 h-4 rounded-full border ${
                   selectedLang === lang.name
                     ? "bg-white border-black"
                     : "border-gray-400"
@@ -266,6 +269,34 @@ export function RightPanel() {
 
       </div>
 
+      {/* Font Transitioning */}
+      <div
+        className={`absolute top-0 w-full h-full bg-gray-900 transition-transform duration-300
+        ${showFontPanel ? "translate-x-0" : "translate-x-full"}`}
+      >
+        {/* Header Back Button*/}
+        <div><button className="flex items-center justify-left p-4 space-x-4 cursor-pointer" onClick={() => setShowFontPanel(false)}><ChevronLeft className={`${showArabicFont ? "text-emerald-700" : ""}`}/><span className={`${showArabicFont ? "text-emerald-700" : ""}`}>Select Font</span></button></div>
+        
+        {/* List of Fonts */}
+        <div>{Uthmani.map((fonts) => (
+          <button
+              onClick={() => setSelectedFont(fonts)}
+              className="flex ml-4 mt-4 items-center gap-3 w-full cursor-pointer"
+            >
+              
+              <span
+                className={`w-4 h-4 rounded-full border ${
+                  selectedFont === fonts
+                    ? "bg-white border-black"
+                    : "border-gray-400"
+                }`}
+              ></span>
+
+              {fonts}
+
+            </button>
+        ))}</div>
+      </div>
     </div>
   );
 }
