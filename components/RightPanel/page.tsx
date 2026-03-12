@@ -15,7 +15,12 @@ import { useState } from "react";
 import { ThemeToggle } from "@/app/theme-toggle";
 import { Button } from "../ui/button";
 import { Slider } from "../ui/slider";
-
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
 export function RightPanel() {
   const [openSection, setOpenSection] = useState(false);
 
@@ -278,24 +283,38 @@ export function RightPanel() {
         <div><button className="flex items-center justify-left p-4 space-x-4 cursor-pointer" onClick={() => setShowFontPanel(false)}><ChevronLeft className={`${showArabicFont ? "text-emerald-700" : ""}`}/><span className={`${showArabicFont ? "text-emerald-700" : ""}`}>Select Font</span></button></div>
         
         {/* List of Fonts */}
-        <div>{Uthmani.map((fonts) => (
-          <button
-              onClick={() => setSelectedFont(fonts)}
-              className="flex ml-4 mt-4 items-center gap-3 w-full cursor-pointer"
-            >
-              
-              <span
-                className={`w-4 h-4 rounded-full border ${
-                  selectedFont === fonts
-                    ? "bg-white border-black"
-                    : "border-gray-400"
-                }`}
-              ></span>
-
-              {fonts}
-
+        <Tabs defaultValue="Uthmani" className="w-700px p-6 items-center justify-center space-x-4">
+          <TabsList>
+            <TabsTrigger value="Uthmani">Uthmani</TabsTrigger>
+            <TabsTrigger value="Indopak">Indopak</TabsTrigger>
+          </TabsList>
+          <TabsContent value="Uthmani">
+            {Uthmani.map((fonts) => (
+              <button
+                  onClick={() => setSelectedFont(fonts)}
+                  className="flex mt-4 items-center gap-3 w-full cursor-pointer"
+                >
+                  
+                  <span
+                    className={`w-3 h-3 rounded-full border ${
+                      selectedFont === fonts
+                        ? "bg-emerald-600 border-emerald-800"
+                        : "border-gray-400"
+                    }`}
+                  ></span>
+                  {fonts}
+                </button>
+            ))}
+            
+          </TabsContent>
+          <TabsContent value="Indopak">{Indopak.map((infonts)=> (
+            <button onClick={() => setSelectedFont(infonts)} className="flex mt-4 items-center gap-3 w-full cursor-pointer">
+              <span className={`w-3 h-3 rounded-full border ${selectedFont === infonts ? "bg-white border-black" : "border-gray-400"}`}> </span>
+              {infonts}
             </button>
-        ))}</div>
+            ))}
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   );
