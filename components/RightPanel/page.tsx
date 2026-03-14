@@ -116,7 +116,7 @@ export function RightPanel() {
         {/* FONT SETTINGS */}
         <div className="w-full">
           <button
-            className="flex items-center justify-between px-6 py-2 w-full hover:bg-black"
+            className="flex items-center justify-between px-6 py-2 w-full hover:bg-black cursor-pointer"
             onClick={() => toggleSection("font")}
           >
             <Type
@@ -199,7 +199,7 @@ export function RightPanel() {
         {/* VIEW SETTINGS */}
         <div className="w-full">
           <button
-            className="flex items-center justify-between px-6 py-2 w-full hover:bg-black"
+            className="flex items-center justify-between px-6 py-2 w-full hover:bg-black cursor-pointer"
             onClick={() => toggleSection("view")}
           >
             <CopyCheck className="text-emerald-800" />
@@ -261,7 +261,7 @@ export function RightPanel() {
         {/* APPEARANCE */}
         <div className="w-full">
           <button
-            className="flex items-center justify-between px-6 py-2 w-full hover:bg-black"
+            className="flex items-center justify-between px-6 py-2 w-full hover:bg-black cursor-pointer"
             onClick={() => toggleSection("appearance")}
           >
             <AlignStartVertical className="text-emerald-800" />
