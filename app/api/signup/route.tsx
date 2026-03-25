@@ -15,7 +15,6 @@ export async function POST(request: NextRequest){
     const existingUser = await User.findOne({email});
     if (existingUser) {
         return new Response(JSON.stringify({message: "User already exists"}), {status: 400})
-
     }
     const user = await User.create({email, password})
     if (!user){

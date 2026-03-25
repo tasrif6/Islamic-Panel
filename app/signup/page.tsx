@@ -4,6 +4,7 @@ import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -11,7 +12,7 @@ export default function SignUp() {
     password: "",
     conf_password: ""
   })
- 
+  const router = useRouter()
   const [error, setError] = useState("")
 
   const handleSubmit = async () => {
@@ -28,6 +29,7 @@ export default function SignUp() {
       const res = await axios.post("/api/signup", formData)
       if (res.status === 201) {
         setError("User Registered Successfully")
+        router.push("/login")
       } 
     } catch (error) {
       if (axios.isAxiosError(error)){
