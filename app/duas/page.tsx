@@ -1,7 +1,7 @@
 "use client";
 import { RightPanel } from "@/components/RightPanel/page";
 import { SideNavbar } from "@/components/SideNavbar/page";
-import CategoryPage from "../Category/duasImportancePg";
+import CategoryPage from "../Category/categoryPage";
 
 export default function DuasPage() {
   return (
