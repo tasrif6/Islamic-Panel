@@ -17,7 +17,8 @@ const DuasContent = {
     reference: 'Bukhari: 844',
     description:
       'Prophet (ﷺ) used to say after every compulsory prayer, The servant will ask his Lord for all of his religiously and worldly needs, because the treasure of all things is in the hands of Allah.',
-    dua: 'Laa ilaaha illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa alaa kulli shain.',
+    arabicDua: 'لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيْكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، اَللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ وَلَا مُعْطِيَ لِمَا مَنَعْتَ وَلَا يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ',
+    dua:'Laa ilaaha illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa alaa kulli shain.',
     translation:
       'There is none worthy of worship except Allah alone. He is the Dominion and to Him be all praise, and He is able to do all things.',
   },
@@ -26,6 +27,7 @@ const DuasContent = {
     title: 'Power of La Ilaha Illallah (Freeing of slave)',
     reference: 'Bukhari: 6404',
     description: 'Say the following statement 10 times: there is no god but Allah.',
+    arabicDua: 'لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ',
     dua: 'Laa ilahaa illallahu wahdahu laa sharika lahu, lahul-mulku wa lahul-hamdu wa huwa alaa kulli shain',
     translation:
       'None has the right to be worshipped but Allah alone. His is the dominion and His is the praise, and He is Able to do all things.',
@@ -46,7 +48,7 @@ const Duas = () => {
       }, 0);
     }
   }, []);
-  const [activeCategory, setActiveCategory ] = useState<string | null>(null)
+
   const [activeSubCategory, setActiveSubCategory ] = useState<string | null> (null);
   
   const handleClick = (id: number) => {
@@ -78,17 +80,15 @@ const Duas = () => {
                     <h3 className="text-3xl font-semibold text-gray-900 dark:text-white mb-2">
                       Overview
                     </h3>
-                    <p className="text-gray-700 dark:text-gray-300 text-2xl">
+                    <p className="text-gray-700 dark:text-gray-300 text-3xl">
                       {content.description}
                     </p>
                   </div>
 
                   {content.dua && (
                     <div className="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg ">
-                      <h3 className="text-2xl font-semibold text-white mb-2">
-                        Dua
-                      </h3>
-                      <p className="dark:text-white text-black text-2xl leading-relaxed italic">
+                      <p className="dark:text-white text-black text-3xl leading-relaxed arabic mt-4">{content.arabicDua}</p>
+                      <p className="dark:text-white text-black text-3xl leading-relaxed italic mt-4">
                         {content.dua}
                       </p>
                       <p className={`text-medium ${isActive ? 'text-emerald-100' : 'text-gray-500'}`}>
@@ -102,7 +102,7 @@ const Duas = () => {
                       <h3 className="text-3xl font-semibold dark:text-white text-black mb-2">
                         Translation
                       </h3>
-                      <p className=" text-2xl dark:text-white text-black">
+                      <p className=" text-3xl dark:text-white text-black">
                         {content.translation}
                       </p>
                     </div>
@@ -110,8 +110,8 @@ const Duas = () => {
 
                   {content.note && (
                     <div className="dark:bg-black bg-white p-4 rounded-2xl">
-                      <p className="dark:text-white text-black">
-                        <span className="font-semibold">Note:</span> {content.note}
+                      <p className="dark:text-white text-black text-3xl">
+                        {content.note}
                       </p>
                       
                     </div>
