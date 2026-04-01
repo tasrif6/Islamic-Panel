@@ -1,15 +1,17 @@
 'use client';
+import { CategoryLinks } from '@/constant/Category';
 import { useState } from 'react';
+import CategoryPage from '../categoryPage';
 
 const DuasContent = {
-  section01: {
+  1: {
     id: 1,
     title: "We are in need of Allah's Help (Surah Al-Fatir)",
     reference: 'Surah Al-Fatir 35:15',
     description:
       'All human beings depend on Allah for their welfare and prevention of evil in various matters of their religion and world. Allah says (interpretation of the meaning): O mankind, you are those in need of Allah, while Allah is the Free of need, the Praiseworthy.',
   },
-  section02: {
+  2: {
     id: 2,
     title: 'The most important thing to ask Allah for',
     reference: 'Bukhari: 844',
@@ -19,7 +21,7 @@ const DuasContent = {
     translation:
       'There is none worthy of worship except Allah alone. He is the Dominion and to Him be all praise, and He is able to do all things.',
   },
-  section03: {
+  3: {
     id: 3,
     title: 'Power of La Ilaha Illallah (Freeing of slave)',
     reference: 'Bukhari: 6404',
@@ -44,12 +46,16 @@ const Duas = () => {
   //     }, 0);
   //   }
   // }, []);
-
+  const [activeCategory, setActiveCategory ] = useState<string | null>(null)
+  const [activeSubCategory, setActiveSubCategory ] = useState<string | null> (null);
+  
+  const handleClick = (id: number) => {
+    const match = CategoryLinks.find((category) => category.id === id);
+    setActiveSubCategory(match ? match.title : null);
+  }
   return (
     <div className="min-h-screen bg-white dark:bg-black p-4 flex ml-12 overflow-hidden">
       <div className="w-3xl flex flex-col">
-        <h1 className="text-3xl font-bold text-emerald-600 m-4 justify-center items-center text-center">Dua's Importance</h1>
-
         <div className="space-y-4 flex-1 ml-12">
           {Object.entries(DuasContent).map(([sectionId, content]: any) => {
             const isActive = activeSection === sectionId;
@@ -61,7 +67,7 @@ const Duas = () => {
               >
                 <div className="w-full p-4 flex items-start justify-between transition bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
                   <div className="text-left">
-                    <h2 className="font-semibold text-lg mb-1">{sectionId}: {content.title}</h2>
+                    <h2 className="font-semibold text-lg mb-1 text-emerald-700">Section- {sectionId}: {content.title}</h2>
                     
                   </div>
                 </div>

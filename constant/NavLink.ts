@@ -3,7 +3,7 @@ import { BadgeInfo, Menu, BookmarkMinus, BookOpenText, ClipboardPlus, Copyright,
 export const NavLinks = [
     {
         id: 1,
-        url:"/duas",
+        url:"/duas-categories",
         name: "Duas",
     },
     {
@@ -59,12 +59,6 @@ export const SideNavLinks =[
         icon: ClipboardPlus,
         name:"Ruqyah",
     },
-    // {
-    //     id: 6,
-    //     url: "/menu",
-    //     icon: Menu,
-    //     name: "Menu",
-    // },
 ]
 
 export const MenuLinks = [

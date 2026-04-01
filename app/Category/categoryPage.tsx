@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import { DuasSubCat01 } from '@/constant/Duas';
 import { ChevronDown } from 'lucide-react';
+import Duas from './DuasImportance/page';
 
 const CategoryPage = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -18,9 +19,10 @@ const CategoryPage = () => {
     return [];
   };
 
+
   // Get duas for a specific subcategory
   const getDuasForSubCategory = (subCategoryId: number) => {
-    if (subCategoryId === 1) {
+    if (subCategoryId >= 1) {
       return DuasSubCat01;
     }
     return [];
@@ -96,12 +98,13 @@ const CategoryPage = () => {
                               {duas.map((dua) => (
                                 <Link
                                   key={dua.id}
-                                  href={dua.url}
-                                  className="block p-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:border-emerald-600 dark:hover:border-emerald-600 hover:bg-emerald-50 dark:hover:bg-gray-800 transition bg-white dark:bg-gray-800"
-                                >
-                                  <h4 className="font-medium text-gray-900 dark:text-white text-sm mb-1">
-                                    {dua.title}
-                                  </h4>
+                                  href={`${catlink.url}/${dua.id}`}
+                                  className="block p-3 rounded-lg hover:bg-emerald-50 dark:hover:bg-gray-800 transition bg-white dark:bg-gray-800"
+                                >     
+                                      <h4 className="font-medium text-gray-900 dark:text-white text-sm mb-1">
+                                        {dua.title}
+                                      </h4>
+                                      
                                 </Link>
                               ))}
                             </div>

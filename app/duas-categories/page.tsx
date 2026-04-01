@@ -2,7 +2,7 @@
 import { RightPanel } from "@/components/RightPanel/page";
 import { SideNavbar } from "@/components/SideNavbar/page";
 import CategoryPage from "../Category/categoryPage";
-import Duas from "../Category/DuasImpDuas/page";
+import Duas from "../Category/DuasImportance/page";
 import DuasNavbarPage from "@/components/DuasNavbar/DuasNavbarPage";
 
 export default function DuasPage() {
