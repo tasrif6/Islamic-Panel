@@ -1,4 +1,4 @@
-import Duas from "@/app/Category/DuasImportance/page"
+import Duas from "@/app/Category/duas-importance/page"
 import { CategoryLinks, DuasImportanceLinks } from "@/constant/Category"
 
 const SectionNavbarPage = () => {

@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import { DuasSubCat01 } from '@/constant/Duas';
 import { ChevronDown } from 'lucide-react';
-import Duas from './DuasImportance/page';
+import Duas from './duas-importance/page';
 
 const CategoryPage = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
