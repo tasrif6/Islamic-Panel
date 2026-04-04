@@ -8,7 +8,7 @@ import { useState } from 'react'
 const DuasNavbarPage = () => {
     // const showSearchBar = onClick = {() =()}
   return (
-     <div className="overflow-hidden fixed top-0 w-full h-[12vh] flex items-center px-4 z-100 dark:bg-black bg-white border">
+     <div className="overflow-hidden fixed top-0 w-full h-[12vh] flex items-center px-4 z-100 dark:bg-black bg-white">
     
         {/* Left — logo + title */}
         <div className="items-center gap-4">

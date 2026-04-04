@@ -60,7 +60,7 @@ export function RightPanel() {
   const [selectedFont, setSelectedFont] = useState("KFGQ");
 
   return (
-    <div className=" overflow-hidden fixed h-full w-80 dark:bg-black bg-white text-black dark:text-white border">
+    <div className=" overflow-hidden fixed h-full w-80 blue:bg-blue-800 dark:bg-black bg-white text-black dark:text-white">
 
       {/* MAIN PANEL */}
       <div className="flex flex-col space-y-2">
@@ -221,7 +221,7 @@ export function RightPanel() {
           </button>
 
           {activeSection === "view" && (
-            <div className="px-6 py-4 space-y-4 bg-black">
+            <div className="px-6 py-4 space-y-4 dark:bg-black">
 
               <div className="flex justify-between">
                 <Label className="text-md">Show Arabic</Label>

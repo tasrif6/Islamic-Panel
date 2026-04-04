@@ -9,7 +9,7 @@ export function SideNavbar(){
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="overflow-visible flex flex-col px-4 fixed h-full border dark:bg-gray-900 bg-white z-10000 transition-all">
+    <div className="overflow-visible flex flex-col px-4 fixed h-full dark:bg-gray-900 bg-white z-10000 transition-all">
         <div className="mt-4">
             {/*Top Logo */}
             <Image src="/logo.jpg" alt="SideLogo" width={40} height={40}/>

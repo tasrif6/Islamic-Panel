@@ -1,16 +1,15 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
-import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
 export function LightDark(){
     const { theme, setTheme } = useTheme();
+    console.log(theme)
     return (
-        <Button variant="outline" size="icon" className="rounded-full" onClick={() => setTheme( theme === "dark" ? "light" : "dark")}>
-            <Moon className="absolute h-10 w-10 rotate-90 scale-0 dark:rotate-0 dark:scale-100"></Moon>
-            <Sun className="absolute text-black h-10 w-10 rotate-0 scale-100 dark:-rotate-90 dark:scale-0"></Sun>
-            
-        </Button>
+        <select value={theme} onChange={e => setTheme(e.target.value)} className="dark:bg-black dark:text-white text-black">
+            <option value="system">System</option>
+            <option value="dark" >Dark</option>
+            <option value="light">Light</option>
+            <option value="blue" onClick={() => setTheme("blue")}>Blue</option>
+        </select>
     )
 }

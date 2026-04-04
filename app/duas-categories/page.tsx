@@ -7,7 +7,7 @@ import DuasNavbarPage from "@/components/DuasNavbar/DuasNavbarPage";
 
 export default function DuasPage() {
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-slate-900 text-white blue:bg-blue-600">
       <SideNavbar />
       <div className="pt-[12vh] pl-18">
         <DuasNavbarPage />
