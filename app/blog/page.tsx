@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { assets } from '@/constant/blog'
 import Image from 'next/image'
 import { useState } from 'react'
-import BlogItemPage from './../../components/BlogItems/blogItemPage';
+import BlogListPage from '@/components/BlogItems/blogListPage'
 
 const blogPage = () => {
     const [value, setValue] =useState("")
@@ -26,7 +26,7 @@ const blogPage = () => {
       </div>
 
       {/* Blog Lists */}
-      <div className="border outline-none mt-10 ml-4 px-2 inline-block"><BlogItemPage /></div>
+      <div className="outline-none mt-10 ml-4 px-2"><BlogListPage /></div>
 
       {/* <div className="items-center justify-center mt-30 m-4 ">
             <h4 className="font-bold text-center text-4xl"> Learning Hooks:</h4>
