@@ -3,23 +3,23 @@ import { BadgeInfo, Menu, BookmarkMinus, BookOpenText, ClipboardPlus, Copyright,
 export const NavLinks = [
     {
         id: 1,
+        url: "/",
+        name: "Home"
+    },
+    {
+        id: 2,
         url:"/duas-categories",
         name: "Duas",
     },
     {
-        id: 2,
+        id: 3,
         url: "/ruqyah",
         name: "Ruqyah",
     },
     {
-        id: 3,
+        id: 4,
         url: "/prayertime",
         name: "Prayer Time",
-    },
-    {
-        id: 4,
-        url: "/ramadan",
-        name: "Ramadan 2026",
     },
     {
         id: 5,
