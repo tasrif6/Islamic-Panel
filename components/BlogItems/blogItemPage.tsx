@@ -2,7 +2,15 @@ import { assets } from "@/constant/blog"
 import Image from "next/image"
 import Link from "next/link"
 
-const BlogItemPage = ({ image, title, category, description, id}) => {
+interface BlogItemProps {
+  image: any
+  title: string
+  category: string
+  description: string
+  id: number
+}
+
+const BlogItemPage = ({ image, title, category, description, id}: BlogItemProps) => {
   return (
     <div key={id} className="max-w-85 sm:max-w-75 hover:shadow-[-7px_7px_0px] cursor-pointer">
         <Link href={`/blogs/${id}`}>
