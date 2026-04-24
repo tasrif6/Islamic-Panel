@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import BlogListPage from '@/components/BlogItems/blogListPage'
 
-const blogPage = () => {
+export default function BlogPage () {
     const [value, setValue] =useState("")
     const [count,setCount ] =useState(0)
   return (
@@ -39,5 +39,4 @@ const blogPage = () => {
         {/* </div> */}
     </div>
   )
-}
-export default blogPage
+};
