@@ -6,8 +6,20 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const BlogsIdPage = ({ params }: { params: Promise<{ id: string }> }) => {
+  // ✅ Tell TypeScript what the data will look like
+    type BlogType = {
+      id: number;
+      title: string;
+      description: string;
+      image: any;
+      date: number;
+      category: string;
+      author: string;
+      author_img: any;
+    };
+
+  const [data, setData] = useState<BlogType | null>(null);
   const { id } = use(params)  
-  const [data, setData] = useState(null)
 
   const fetchBlogData = () => {
     for (let i = 0; i < blog_data.length; i++) {
